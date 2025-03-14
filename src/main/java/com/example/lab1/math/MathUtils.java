@@ -29,32 +29,25 @@ public class MathUtils {
             // Получаем число Бернулли для текущего члена ряда
             double bernoulli = getBernoulli(2 * i);
 
-            // Вычисляем числитель текущего члена ряда
+            // Вычисляем числитель
             double numerator = Math.pow(-1, i - 1) * Math.pow(2, 2 * i) * (Math.pow(2, 2 * i) - 1) * bernoulli;
 
-            // Вычисляем знаменатель текущего члена ряда (факториал)
+            // Вычисляем знаменатель
             double denominator = factorial(2 * i);
 
-            // Добавляем текущий член ряда к результату
             result += numerator / denominator * Math.pow(x, 2 * i - 1);
         }
 
         return result;
     }
 
-    /**
-     * Вычисляет факториал числа n.
-     */
     public static long factorial(int n) {
         if (n == 0) {
-            return 1; // Факториал 0 равен 1
+            return 1;
         }
-        return n * factorial(n - 1); // Рекурсивное вычисление факториала
+        return n * factorial(n - 1);
     }
 
-    /**
-     * Вычисляет число Бернулли для заданного индекса n.
-     */
     private static double getBernoulli(int n) {
         if (n == 0) {
             return 1.0;
@@ -69,9 +62,7 @@ public class MathUtils {
         return -result / (n + 1);
     }
 
-    /**
-     * Вычисляет биномиальный коэффициент C(n, k).
-     */
+
     private static long binomialCoefficient(int n, int k) {
         if (k == 0) {
             return 1; // C(n, 0) = 1
